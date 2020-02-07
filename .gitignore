@@ -1,0 +1,44 @@
+site/node_modules/
+gatsby-theme-budapest/node_modules/
+
+
+packages/*/yarn.lock
+packages/*/package-lock.json
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
+
+
+# Build Path of Test Fixtures
+.gatsby-context.js
+.DS_Store
+public/
+node_modules/
+.cache/
+.netlify
+
+
+site/public/
+gatsby-theme-budapest/public/
+
+# IDE specific
+.idea/
+.vscode/
+*.sw*
+
+
+# lock files
+yarn.lock
+package-lock.json
+
