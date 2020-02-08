@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <footer
       sx={{
-        fontSize: 1,
-        color: 'text',
-        bg: 'background',
+        fontSize: 0,
+        color: 'textyar',
+        bg: '#eceff1',
         variant: 'styles.footer'
       }}>
       <div
@@ -16,7 +16,7 @@ const Footer = () => {
           display: 'flex',
           flexWrap: 'wrap',
           alignItems: 'center',
-          maxWidth: 768,
+          width: ['100%', '90%'],
           mx: 'auto',
           px: 2,
           py: 4

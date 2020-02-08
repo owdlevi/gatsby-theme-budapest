@@ -1,6 +1,7 @@
 import React from 'react'
-import Header from '../Header'
-import Footer from '../Footer'
+import Header from './Header'
+import Main from './Main'
+import Footer from './Footer'
 import ResetCSS from './resetCSS'
 
 const Layout = ({ children }) => {
@@ -8,7 +9,7 @@ const Layout = ({ children }) => {
     <>
       <ResetCSS />
       <Header />
-      <main>{children}</main>
+      <Main>{children}</Main>
       <Footer />
     </>
   )

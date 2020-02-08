@@ -52,11 +52,10 @@ const ResetCSS = () => {
           h5,
           h6 {
             margin-top: 0;
-            font-family: 'Poppins', sans-serif;
+            font-weight: normal;
           }
 
           body {
-            font-family: 'Fira Sans', sans-serif;
             margin: 0;
             padding: 0;
             font-size: 15px;
@@ -73,7 +72,6 @@ const ResetCSS = () => {
           textarea,
           select,
           button {
-            font-family: 'Fira Sans', sans-serif;
           }
 
           ul,
@@ -92,7 +90,6 @@ const ResetCSS = () => {
           }
 
           blockquote {
-            font-family: 'Poppins', sans-serif;
             font-weight: 500;
           }
 
@@ -130,28 +127,6 @@ const ResetCSS = () => {
           table th {
             border: 1px solid #dfe2e5;
             padding: 0.4em 1em;
-          }
-
-          .nav-sticky {
-            header {
-              // box-shadow: 0 0 15px rgba(0,0,0,.08);
-              .navbar {
-                @media (min-width: 1400px) {
-                  padding-top: 25px;
-                  padding-bottom: 25px;
-                }
-                @media (min-width: 1200px) {
-                  padding-top: 20px;
-                  padding-bottom: 20px;
-                }
-              }
-            }
-          }
-          .particles-container {
-            div {
-              width: 100%;
-              height: 100%;
-            }
           }
         `}
       />
