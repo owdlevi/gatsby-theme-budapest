@@ -12,6 +12,16 @@ export default {
     fontSize: 5,
     fontWeight: `fontWeights.heading`
   },
+  container: {
+    fontSize: 1,
+    width: '90%',
+    px: 2,
+    mx: 'auto'
+  },
+  navlink: {
+    color: 'primary',
+    fontWeight: `500`
+  },
   pre: {
     variant: `prism`,
     fontFamily: `monospace`,

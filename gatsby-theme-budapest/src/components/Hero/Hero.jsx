@@ -5,7 +5,8 @@ const Hero = () => {
   return (
     <section
       sx={{
-        py: [4, 5]
+        py: [4, 5],
+        bg: 'rgb(248, 249, 250)'
       }}>
       <div
         sx={{

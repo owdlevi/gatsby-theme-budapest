@@ -6,7 +6,6 @@ const Main = ({ children }) => {
   return (
     <main
       sx={{
-        width: ['100%', '90%'],
         mx: 'auto',
         variant: 'styles.main'
       }}>
