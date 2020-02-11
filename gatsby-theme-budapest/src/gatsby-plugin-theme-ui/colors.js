@@ -11,6 +11,7 @@ const lightGray = `hsla(0, 0%, 0%, 0.2)`
 export default {
   text: grey90,
   background: white,
+  lightBackground:  `rgba(255, 255, 255, 0.86)`,
   primary: black80,
   secondary: purple60,
   muted: lightGray,

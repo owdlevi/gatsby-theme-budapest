@@ -14,7 +14,8 @@ export default {
   },
   container: {
     fontSize: 1,
-    width: '90%',
+    width: '100%',
+    maxWidth: ['100%', '1400px'],
     px: 2,
     mx: 'auto'
   },

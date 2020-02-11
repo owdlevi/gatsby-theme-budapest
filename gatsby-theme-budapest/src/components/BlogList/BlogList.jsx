@@ -40,7 +40,7 @@ const BlogList = ({ posts }) => {
             m: 0,
             display: 'flex',
             justifyContent: 'space-around',
-            flexFlow: ['column', 'row'],
+            flexFlow: ['column', 'row wrap'],
             flexWrap: 'wrap'
           }}>
           {posts.map(post => (

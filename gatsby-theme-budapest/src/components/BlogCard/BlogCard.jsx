@@ -18,23 +18,56 @@ const BlogCard = ({ post }) => {
         position: 'relative',
         overflow: 'hidden'
       }}>
-      <Img
-        sx={{
-          height: '300px'
-        }}
-        fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid}
-        alt={post.node.frontmatter.title}
-      />
-      <div sx={{ p: [2, 3] }}>
+      <div sx={{
+        height: '60%',
+        position: 'relative'
+      }}>
+        <Img
+          sx={{
+            height: '100%'
+          }}
+          fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid}
+          alt={post.node.frontmatter.title}
+        />
+        <div sx={{
+          position: 'absolute',
+          zIndex: 20,
+          left: 0,
+          bottom: 0,
+          background: 'highlight',
+        }}>
+          <Link to='/a' 
+          sx={{
+            display: 'inline-block',
+            p: [2],
+            color: 'background',
+            fontWeight: '500',
+            textTransform: 'uppercase',
+            fontSize: [0, 1],
+            letterSpacing: '1px'
+          }}>
+          Category</Link>
+        </div>
+      </div>
+      <div sx={{
+        p: [2, 3], 
+      }}>
         <Styled.h2
           sx={{
-            m: 0
+            m: 0,
+            color: 'primary',
+            textDecoration: 'none',
+            mb: [1, 2]
           }}>
           {post.node.frontmatter.title}
         </Styled.h2>
         <small sx={{ fontWeight: 'bold' }}>{post.date}</small>
 
-        <Styled.p>{post.node.frontmatter.excerpt}</Styled.p>
+        <Styled.p sx={{
+          color: 'primary',
+          textDecoration: 'none',
+          lineHeight: '1.4em'
+        }}>{post.node.frontmatter.excerpt}</Styled.p>
       </div>
     </Link>
   )
