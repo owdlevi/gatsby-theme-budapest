@@ -18,10 +18,11 @@ const BlogCard = ({ post }) => {
         position: 'relative',
         overflow: 'hidden'
       }}>
-      <div sx={{
-        height: '60%',
-        position: 'relative'
-      }}>
+      <div
+        sx={{
+          height: '60%',
+          position: 'relative'
+        }}>
         <Img
           sx={{
             height: '100%'
@@ -29,29 +30,33 @@ const BlogCard = ({ post }) => {
           fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid}
           alt={post.node.frontmatter.title}
         />
-        <div sx={{
-          position: 'absolute',
-          zIndex: 20,
-          left: 0,
-          bottom: 0,
-          backgroundColor: 'primary',
-        }}>
-          <Link to='/a' 
+        <div
           sx={{
-            display: 'inline-block',
-            p: [2],
-            color: 'white',
-            fontWeight: '500',
-            textTransform: 'uppercase',
-            fontSize: [0, 1],
-            letterSpacing: '1px'
+            position: 'absolute',
+            zIndex: 20,
+            left: 0,
+            bottom: 0,
+            backgroundColor: 'primary'
           }}>
-          Category</Link>
+          <Link
+            to="/a"
+            sx={{
+              display: 'inline-block',
+              p: [2],
+              color: 'white',
+              fontWeight: '500',
+              textTransform: 'uppercase',
+              fontSize: '12px',
+              letterSpacing: '1px'
+            }}>
+            {post.node.frontmatter.category}
+          </Link>
         </div>
       </div>
-      <div sx={{
-        p: [2, 3], 
-      }}>
+      <div
+        sx={{
+          p: [2, 3]
+        }}>
         <Styled.h2
           sx={{
             m: 0,
@@ -63,23 +68,40 @@ const BlogCard = ({ post }) => {
         </Styled.h2>
         <small sx={{ fontWeight: 'bold' }}>{post.date}</small>
 
-        <Styled.p sx={{
-          color: 'primary',
-          textDecoration: 'none',
-          lineHeight: '1.4em'
-        }}>{post.node.frontmatter.excerpt}</Styled.p>
-        <div sx={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          width: '100%',
-          // height: '40px',
-          p:[1,2],
-          backgroundColor: 'lightBackground',
-          color: 'secondary'
-        }}>
-          <Link to='/travel'>#travel</Link>
-          <Link to='/hungaryy'>#hungary</Link>
+        <Styled.p
+          sx={{
+            color: 'primary',
+            textDecoration: 'none',
+            lineHeight: '1.4em'
+          }}>
+          {post.node.frontmatter.excerpt}
+        </Styled.p>
+        <div
+          sx={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            // height: '40px',
+            p: [1, 2],
+            backgroundColor: 'lightBackground',
+            color: 'secondary'
+          }}>
+          {post.node.frontmatter.tags.map(tag => {
+            return (
+              <Link
+                sx={{
+                  p: 1,
+                  mx: 1,
+                  fontSize: '14px',
+                  color: 'primary',
+                  borderRadius: '10px'
+                }}
+                to={`/tag/${tag.toLowerCase()}`}>
+                #{tag}
+              </Link>
+            )
+          })}
         </div>
       </div>
     </Link>
