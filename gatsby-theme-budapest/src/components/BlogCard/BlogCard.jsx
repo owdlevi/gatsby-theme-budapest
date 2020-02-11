@@ -9,7 +9,7 @@ const BlogCard = ({ post }) => {
       to={post.node.fields.slug}
       sx={{
         mb: 4,
-        width: ['100%', 'calc(100%/3 - 20px)'],
+        width: ['100%', 'calc(100%/3 - 40px)'],
         boxShadow: '3px 3px 20px rgba(0, 0, 0, .5)',
         textAlign: 'center',
 
@@ -34,13 +34,13 @@ const BlogCard = ({ post }) => {
           zIndex: 20,
           left: 0,
           bottom: 0,
-          background: 'highlight',
+          backgroundColor: 'primary',
         }}>
           <Link to='/a' 
           sx={{
             display: 'inline-block',
             p: [2],
-            color: 'background',
+            color: 'white',
             fontWeight: '500',
             textTransform: 'uppercase',
             fontSize: [0, 1],
@@ -68,6 +68,19 @@ const BlogCard = ({ post }) => {
           textDecoration: 'none',
           lineHeight: '1.4em'
         }}>{post.node.frontmatter.excerpt}</Styled.p>
+        <div sx={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          // height: '40px',
+          p:[1,2],
+          backgroundColor: 'lightBackground',
+          color: 'secondary'
+        }}>
+          <Link to='/travel'>#travel</Link>
+          <Link to='/hungaryy'>#hungary</Link>
+        </div>
       </div>
     </Link>
   )
