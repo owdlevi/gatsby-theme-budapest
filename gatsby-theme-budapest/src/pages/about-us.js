@@ -2,7 +2,6 @@
 import { Styled, jsx } from 'theme-ui'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import BlogList from '../components/BlogList'
 
 const aboutPage = () => {
   return (

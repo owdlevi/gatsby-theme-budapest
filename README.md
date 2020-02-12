@@ -10,4 +10,6 @@
   - Social share buttons?
   - SEO, social cards for head
   - Schema markup for site and articles
+  - Breadcrumbs with Schema
+  - FAQ component with schema built in
   
