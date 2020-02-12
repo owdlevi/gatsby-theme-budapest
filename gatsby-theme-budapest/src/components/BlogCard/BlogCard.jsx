@@ -52,6 +52,27 @@ const BlogCard = ({ post }) => {
             {post.node.frontmatter.category}
           </Link>
         </div>
+        <div
+          sx={{
+            position: 'absolute',
+            zIndex: 20,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'primary'
+          }}>
+          <span
+            sx={{
+              display: 'inline-block',
+              p: [2],
+              color: 'white',
+              fontWeight: '500',
+              textTransform: 'uppercase',
+              fontSize: '12px',
+              letterSpacing: '1px'
+            }}>
+            {post.node.timeToRead} min
+          </span>
+        </div>
       </div>
       <div
         sx={{
@@ -66,7 +87,7 @@ const BlogCard = ({ post }) => {
           }}>
           {post.node.frontmatter.title}
         </Styled.h2>
-        <small sx={{ fontWeight: 'bold' }}>{post.date}</small>
+        <small sx={{ fontWeight: 'bold' }}>{post.node.frontmatter.post_date}</small>
 
         <Styled.p
           sx={{

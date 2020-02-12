@@ -22,9 +22,11 @@ export const blogListQuery = graphql`
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             title
             tags
+            post_date
             excerpt
             category
             featuredImage {

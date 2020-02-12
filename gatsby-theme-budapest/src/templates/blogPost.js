@@ -7,7 +7,7 @@ import Layout from '../components/Layout'
 const blogPost = ({ data: { mdx } }) => {
   return (
     <Layout>
-      <div
+      <article
         sx={{
           width: ['100%', '90%'],
           mx: 'auto',
@@ -16,7 +16,7 @@ const blogPost = ({ data: { mdx } }) => {
         }}>
         <h1>{mdx.frontmatter.title}</h1>
         <MDXRenderer>{mdx.body}</MDXRenderer>
-      </div>
+      </article>
     </Layout>
   )
 }
