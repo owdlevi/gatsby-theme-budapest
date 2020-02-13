@@ -7,7 +7,7 @@ const BlogList = ({ posts }) => {
   return (
     <section
       sx={{
-        py: 4
+        py: [3,4]
       }}>
       <div
         sx={{
@@ -18,7 +18,7 @@ const BlogList = ({ posts }) => {
             maxWidth: 640,
             mx: 'auto',
             px: 2,
-            py: [2, 3],
+            pb: [2, 3],
             textAlign: 'center'
           }}>
           <Styled.h2

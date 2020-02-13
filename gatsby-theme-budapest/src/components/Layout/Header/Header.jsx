@@ -53,12 +53,12 @@ const Header = () => {
             justifyContent: 'flex-start'
           }}>
           <Link
-            to="/work"
+            to="/about-us"
             sx={{
               variant: 'styles.navlink',
               p: 2
             }}>
-            Work
+            About Us
           </Link>
           <Link
             to="/blog"

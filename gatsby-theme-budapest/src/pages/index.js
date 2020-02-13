@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import Quote from '../components/Quote'
 import BlogList from '../components/BlogList'
 
 const indexPage = props => {
@@ -9,6 +10,7 @@ const indexPage = props => {
   return (
     <Layout>
       <Hero>Hero Component?</Hero>
+      <Quote />
       <BlogList posts={blogPosts}></BlogList>
     </Layout>
   )
@@ -22,9 +24,11 @@ export const blogListQuery = graphql`
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             title
             tags
+            post_date
             excerpt
             category
             featuredImage {
