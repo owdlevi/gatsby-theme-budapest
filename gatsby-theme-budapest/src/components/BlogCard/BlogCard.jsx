@@ -2,6 +2,7 @@
 import { Styled, jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import Tag from '../Tag/Tag'
 
 const BlogCard = ({ post }) => {
   return (
@@ -9,10 +10,9 @@ const BlogCard = ({ post }) => {
       to={post.node.fields.slug}
       sx={{
         mb: 4,
-        width: ['100%', 'calc(100%/3 - 40px)'],
+        width: ['100%', '100%', 'calc(100%/2 - 30px)', 'calc(100%/3 - 40px)'],
         boxShadow: '3px 3px 20px rgba(0, 0, 0, .5)',
         textAlign: 'center',
-
         height: ['auto', '600px'],
         borderRadius: 5,
         position: 'relative',
@@ -39,7 +39,7 @@ const BlogCard = ({ post }) => {
             backgroundColor: 'primary'
           }}>
           <Link
-            to="/a"
+            to="/"
             sx={{
               display: 'inline-block',
               p: [2],
@@ -87,8 +87,6 @@ const BlogCard = ({ post }) => {
           }}>
           {post.node.frontmatter.title}
         </Styled.h2>
-        <small sx={{ fontWeight: 'bold' }}>{post.node.frontmatter.post_date}</small>
-
         <Styled.p
           sx={{
             color: 'primary',
@@ -110,17 +108,7 @@ const BlogCard = ({ post }) => {
           }}>
           {post.node.frontmatter.tags.map(tag => {
             return (
-              <Link
-                sx={{
-                  p: 1,
-                  mx: 1,
-                  fontSize: '14px',
-                  color: 'primary',
-                  borderRadius: '10px'
-                }}
-                to={`/tag/${tag.toLowerCase()}`}>
-                #{tag}
-              </Link>
+              <Tag tag={tag} />
             )
           })}
         </div>

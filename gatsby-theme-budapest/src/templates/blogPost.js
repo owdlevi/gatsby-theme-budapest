@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { Styled, jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/Layout'
 
@@ -9,13 +10,35 @@ const blogPost = ({ data: { mdx } }) => {
     <Layout>
       <article
         sx={{
-          width: ['100%', '90%'],
+          width: ['100%'],
           mx: 'auto',
           py: [3, 4],
           px: [3, 4]
         }}>
-        <h1>{mdx.frontmatter.title}</h1>
+        <div>
+          <Img
+            sx={{
+              height: '100%'
+            }}
+            fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
+            alt={mdx.frontmatter.title}
+          />
+        </div>
+        <div sx={{
+          width: '90%',
+          mx: 'auto',
+          mt: '-200px',
+          zIndex: 20,
+          position: 'relative',
+          backgroundColor: 'background',
+          p: [3,4],
+          boxShadow: '3px 3px 20px rgba(0, 0, 0, .5)',
+        }}>
+        <Styled.h1 sx={{
+          textAlign: 'center'
+        }}>{mdx.frontmatter.title}</Styled.h1>
         <MDXRenderer>{mdx.body}</MDXRenderer>
+        </div>
       </article>
     </Layout>
   )
@@ -26,9 +49,21 @@ export const pageQuery = graphql`
     mdx(fields: { slug: { eq: $slug } }) {
       id
       body
-      frontmatter {
-        title
-      }
+      timeToRead
+          frontmatter {
+            title
+            tags
+            post_date
+            excerpt
+            category
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 1400, maxHeight: 500, quality: 80) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
     }
   }
 `
