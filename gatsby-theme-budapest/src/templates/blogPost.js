@@ -12,8 +12,6 @@ const blogPost = ({ data: { mdx } }) => {
         sx={{
           width: ['100%'],
           mx: 'auto',
-          py: [3, 4],
-          px: [3, 4]
         }}>
         <div>
           <Img
@@ -25,19 +23,19 @@ const blogPost = ({ data: { mdx } }) => {
           />
         </div>
         <div sx={{
-          width: '90%',
+          width: ['90%', '80%'],
           mx: 'auto',
           mt: '-200px',
           zIndex: 20,
           position: 'relative',
           backgroundColor: 'background',
-          p: [3,4],
+          p: [3, 4],
           boxShadow: '3px 3px 20px rgba(0, 0, 0, .5)',
         }}>
-        <Styled.h1 sx={{
-          textAlign: 'center'
-        }}>{mdx.frontmatter.title}</Styled.h1>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
+          <Styled.h1 sx={{
+            textAlign: 'center'
+          }}>{mdx.frontmatter.title}</Styled.h1>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
         </div>
       </article>
     </Layout>
