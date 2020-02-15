@@ -11,7 +11,7 @@ const blogPost = ({ data: { mdx } }) => {
       <article
         sx={{
           width: ['100%'],
-          mx: 'auto',
+          mx: 'auto'
         }}>
         <div>
           <Img
@@ -22,19 +22,24 @@ const blogPost = ({ data: { mdx } }) => {
             alt={mdx.frontmatter.title}
           />
         </div>
-        <div sx={{
-          width: ['90%', '80%'],
-          mx: 'auto',
-          mt: '-200px',
-          zIndex: 20,
-          position: 'relative',
-          backgroundColor: 'background',
-          p: [3, 4],
-          boxShadow: '3px 3px 20px rgba(0, 0, 0, .5)',
-        }}>
-          <Styled.h1 sx={{
-            textAlign: 'center'
-          }}>{mdx.frontmatter.title}</Styled.h1>
+        <div
+          sx={{
+            width: ['90%', '80%'],
+            mx: 'auto',
+            mt: '-200px',
+            mb: [3, 4],
+            zIndex: 20,
+            position: 'relative',
+            backgroundColor: 'background',
+            p: [3, 4],
+            boxShadow: '3px 3px 20px rgba(0, 0, 0, .5)'
+          }}>
+          <Styled.h1
+            sx={{
+              textAlign: 'center'
+            }}>
+            {mdx.frontmatter.title}
+          </Styled.h1>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </div>
       </article>
@@ -48,20 +53,20 @@ export const pageQuery = graphql`
       id
       body
       timeToRead
-          frontmatter {
-            title
-            tags
-            post_date
-            excerpt
-            category
-            featuredImage {
-              childImageSharp {
-                fluid(maxWidth: 1400, maxHeight: 500, quality: 80) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
+      frontmatter {
+        title
+        tags
+        post_date
+        excerpt
+        category
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 1400, maxHeight: 500, quality: 80) {
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
+        }
+      }
     }
   }
 `

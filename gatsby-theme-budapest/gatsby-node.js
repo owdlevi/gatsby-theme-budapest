@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const posts = result.data.allMdx.edges
 
   posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const prev = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
 
     createPage({
@@ -38,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: postTemplate,
       context: {
         slug: post.node.fields.slug,
-        previous,
+        prev,
         next
       }
     })

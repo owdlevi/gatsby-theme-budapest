@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from 'theme-ui'
 import { Link } from 'gatsby'
-import logo from '../../../images/logo.svg'
-import logo_dark from '../../../images/logo_dark.svg'
+import logo from '../../images/logo.svg'
+import logo_dark from '../../images/logo_dark.svg'
 
 const Logo = () => {
   const [colorMode, setColorMode] = useColorMode()

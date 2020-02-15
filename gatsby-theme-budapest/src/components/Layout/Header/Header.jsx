@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from 'theme-ui'
 import { Link } from 'gatsby'
-import Logo from './Logo'
+import Logo from '../Logo'
 import Switch from './Switch'
 
 import sun from '../../../images/sun.png'

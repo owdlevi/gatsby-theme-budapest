@@ -57,7 +57,7 @@ export default {
   },
   // from typography overrideThemeStyles
   a: {
-    color: `primary`
+    color: `text`
   },
   hr: {
     borderColor: `muted`

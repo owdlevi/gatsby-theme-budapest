@@ -1,18 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Blog Title Placeholder`,
-    author: `Name Placeholder`,
-    description: `Description placeholder`,
-    social: [
-      {
-        name: `Twitter`,
-        url: `https://twitter.com/gatsbyjs`
-      },
-      {
-        name: `GitHub`,
-        url: `https://github.com/gatsbyjs`
-      }
-    ]
+    title: `Gatsby Theme Budapest - Beta`,
+    author: `David Levente Dozsa - CrazyCode.com`,
+    description: `Modern minimalist Gatsby Theme. Version 0.0.1 Beta`,
+    siteName: `Gatsby Theme Budapest`,
+    siteDescription: `Modern minimalist Gatsby Theme.`
   },
   plugins: [
     {

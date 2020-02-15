@@ -4,11 +4,14 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Quote from '../components/Quote'
 import BlogList from '../components/BlogList'
+import SEO from '../components/SEO'
 
 const indexPage = props => {
   const blogPosts = props.data.allMdx.edges
+  const siteInfo = props.data.site.siteMetadata
   return (
     <Layout>
+      <SEO title={siteInfo.title} description={siteInfo.description} />
       <Hero>Hero Component?</Hero>
       <Quote />
       <BlogList posts={blogPosts}></BlogList>
@@ -40,6 +43,11 @@ export const blogListQuery = graphql`
             }
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
       }
     }
   }
