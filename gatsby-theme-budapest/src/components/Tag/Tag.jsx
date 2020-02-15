@@ -9,7 +9,7 @@ const Tag = ({ tag }) => {
         p: 1,
         mx: 1,
         fontSize: '14px',
-        color: 'primary',
+        color: 'text',
         borderRadius: '10px'
       }}
       to={`/tag/${tag.toLowerCase()}`}>

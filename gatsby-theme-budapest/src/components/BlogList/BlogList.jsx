@@ -7,7 +7,8 @@ const BlogList = ({ posts }) => {
   return (
     <section
       sx={{
-        py: [3,4]
+        py: [3, 4],
+        backgroundColor: 'lightBackground'
       }}>
       <div
         sx={{

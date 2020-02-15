@@ -20,7 +20,7 @@ export default {
     mx: 'auto'
   },
   navlink: {
-    color: 'primary',
+    color: 'text',
     fontWeight: `500`
   },
   pre: {

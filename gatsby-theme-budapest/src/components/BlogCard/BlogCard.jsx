@@ -23,12 +23,13 @@ const BlogCard = ({ post }) => {
       sx={{
         mb: 4,
         width: ['100%', '100%', 'calc(100%/2 - 30px)', 'calc(100%/3 - 40px)'],
-        boxShadow: '3px 3px 20px rgba(0, 0, 0, .5)',
+        boxShadow: '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
         textAlign: 'center',
         height: ['auto', '600px'],
         borderRadius: 5,
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        backgroundColor: 'background'
       }}>
       <Waypoint key={post.node.fields.slug} bottomOffset="50px" onEnter={() => setCardVisible(true)} />
       <Link to={post.node.fields.slug}>
@@ -95,15 +96,16 @@ const BlogCard = ({ post }) => {
           <Styled.h2
             sx={{
               m: 0,
-              color: 'primary',
+              color: 'text',
               textDecoration: 'none',
-              mb: [1, 2]
+              mb: [1, 2],
+              fontWeight: 600
             }}>
             {post.node.frontmatter.title}
           </Styled.h2>
           <Styled.p
             sx={{
-              color: 'primary',
+              color: 'text',
               textDecoration: 'none',
               lineHeight: '1.4em'
             }}>
@@ -117,8 +119,8 @@ const BlogCard = ({ post }) => {
               width: '100%',
               // height: '40px',
               p: [1, 2],
-              backgroundColor: 'lightBackground',
-              color: 'secondary'
+              backgroundColor: 'background',
+              color: 'text'
             }}>
             {post.node.frontmatter.tags.map(tag => {
               return <Tag tag={tag} />

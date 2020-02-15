@@ -46,6 +46,7 @@ module.exports = {
         ]
       }
     },
+    `gatsby-remark-prismjs`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-theme-ui`

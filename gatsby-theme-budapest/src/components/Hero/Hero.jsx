@@ -6,7 +6,7 @@ const Hero = () => {
     <section
       sx={{
         py: [4, 5],
-        bg: 'rgb(248, 249, 250)'
+        bg: 'lightBackground'
       }}>
       <div
         sx={{

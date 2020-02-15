@@ -1,4 +1,7 @@
 export default {
+  '.gatsby-highlight': {
+    backgroundColor: 'blue'
+  },
   '.attr-name': {
     fontStyle: `italic`
   },

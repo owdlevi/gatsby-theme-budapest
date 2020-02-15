@@ -1,8 +1,25 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, useColorMode } from 'theme-ui'
 import { Link } from 'gatsby'
+import Logo from './Logo'
+import Switch from './Switch'
+
+import sun from '../../../images/sun.png'
+import moon from '../../../images/moon.png'
 
 const Header = () => {
+  const iconCss = [{ margin: 4 }]
+
+  const checkedIcon = <img alt="moon indicating dark mode" src={moon} width="16" height="16" role="presentation" css={iconCss} />
+
+  const uncheckedIcon = <img alt="sun indicating light mode" src={sun} width="16" height="16" role="presentation" css={iconCss} />
+
+  const [colorMode, setColorMode] = useColorMode()
+  const isDark = colorMode === `dark`
+  const toggleColorMode = e => {
+    setColorMode(isDark ? `light` : `dark`)
+  }
+
   return (
     <header
       sx={{
@@ -32,19 +49,7 @@ const Header = () => {
             gridColumnEnd: [3, 3],
             order: [0, 1]
           }}>
-          <Link to="/" title="Home">
-            <img alt="UI Logo" src="https://contrast.now.sh/cff/40f?width=200&height=48&text=Budapest" />
-            <span
-              sx={{
-                position: 'absolute',
-                width: 1,
-                height: 1,
-                overflow: 'hidden',
-                top: -9999
-              }}>
-              Home
-            </span>
-          </Link>
+          <Logo />
         </div>
         <div
           sx={{
@@ -76,22 +81,13 @@ const Header = () => {
             justifyContent: 'flex-end',
             order: 2
           }}>
-          <Link
-            to="/about"
-            sx={{
-              variant: 'styles.navlink',
-              p: 2
-            }}>
-            About
-          </Link>
-          <Link
-            to="/contact"
-            sx={{
-              variant: 'styles.navlink',
-              p: 2
-            }}>
-            Contact
-          </Link>
+          <Switch
+            aria-label="Toggle dark mode"
+            checkedIcon={checkedIcon}
+            uncheckedIcon={uncheckedIcon}
+            checked={isDark}
+            onChange={toggleColorMode}
+          />
         </div>
       </div>
     </header>
