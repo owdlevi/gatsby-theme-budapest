@@ -10,6 +10,7 @@ export default {
   text: '#212121',
   background: '#ffffff',
   lightBackground: '#C8E6C9',
+  footerBackground: '#757575',
   primary: '#4CAF50',
   darkPrimary: '#388E3C',
   secondary: '#388E3C',

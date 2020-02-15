@@ -12,6 +12,12 @@ export default {
     fontSize: 5,
     fontWeight: `fontWeights.heading`
   },
+  header: {
+    width: '100%',
+    px: 2,
+    height: 80,
+    py: 2
+  },
   container: {
     fontSize: 1,
     width: '100%',

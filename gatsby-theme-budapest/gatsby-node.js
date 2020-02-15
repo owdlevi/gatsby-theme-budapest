@@ -1,11 +1,9 @@
-const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
-// const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const postTemplate = path.resolve(`./src/templates/blogPost.js`)
+  const postTemplate = require.resolve(`./src/templates/blogPost.js`)
   const result = await graphql(`
     {
       allMdx {

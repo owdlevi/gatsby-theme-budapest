@@ -23,22 +23,16 @@ const Header = () => {
   return (
     <header
       sx={{
-        width: '100%',
-        px: 2,
-        height: 80,
-        py: 2,
-        variant: 'styles.header',
-        boxShadow: '0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15)'
+        variant: 'styles.header'
       }}>
       <div
         sx={{
           display: 'grid',
           gridGap: 3,
-          width: ['100%', '90%'],
+          maxWidth: ['100%', '1400px'],
           mx: 'auto',
           gridAutoFlow: 'row',
-          gridTemplateColumns: ['repeat(2, 1fr)', 'repeat(3, 1fr)'],
-          variant: 'styles.header'
+          gridTemplateColumns: ['repeat(2, 1fr)', 'repeat(3, 1fr)']
         }}>
         <div
           sx={{

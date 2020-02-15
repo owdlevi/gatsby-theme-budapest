@@ -8,7 +8,7 @@ const Footer = () => {
       sx={{
         fontSize: 0,
         color: 'background',
-        bg: '#212121',
+        bg: 'footerBackground',
         variant: 'styles.footer'
       }}>
       <div
