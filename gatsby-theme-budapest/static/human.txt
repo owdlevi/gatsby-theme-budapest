@@ -1,0 +1,10 @@
+/* TEAM */
+
+Creator: David Levente Dozsa - CrazyCode
+URL: https://www.crazycode.com
+Description: Hi! I'm David and I'm a self-taught and passionate full-stack developer
+
+/* SITE */
+
+Standards: HTML5, CSS
+Components: Gatsby

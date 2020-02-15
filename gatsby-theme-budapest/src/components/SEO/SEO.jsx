@@ -1,25 +1,27 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 
-import siteConfig from '../../../config/siteConfig'
+const Head = props => {
+  const { title, description, data } = props
+  const { buildTime, config } = data.site
 
-const SEO = ({ title, description }) => {
   const schemaOrgJSONLD = [
     {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      url: siteConfig.siteURL ? siteConfig.siteURL : ``,
-      name: siteConfig.siteName ? siteConfig.siteName : ``,
-      alternateName: siteConfig.siteTitleAlt ? siteConfig.siteTitleAlt : ``
+      url: config.siteUrl ? config.siteUrl : ``,
+      name: config.siteName ? config.siteName : ``,
+      alternateName: config.siteTitleAlt ? config.siteTitleAlt : ``
     }
   ]
 
   return (
     <Helmet>
-      <html lang={siteConfig.lang} />
+      <html lang={config.lang} />
       {/* General tags */}
       <title>
-        {title} {siteConfig.siteBrandName ? ` | ${siteConfig.siteBrandName}` : ``}
+        {title} {config.siteBrandName ? ` | ${config.siteBrandName}` : ``}
       </title>
       <meta name="description" content={description} />
       {/* <meta name="image" content={image} /> */}
@@ -30,4 +32,20 @@ const SEO = ({ title, description }) => {
   )
 }
 
+const SEO = props => <StaticQuery query={querySEO} render={data => <Head {...props} data={data} />} />
+
 export default SEO
+
+const querySEO = graphql`
+  query SEO {
+    site {
+      buildTime(formatString: "YYYY-MM-DD")
+      config: siteMetadata {
+        lang
+        siteName
+        siteUrl
+        siteBrandName
+      }
+    }
+  }
+`

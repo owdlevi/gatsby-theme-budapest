@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, useColorMode } from 'theme-ui'
-import { Link } from 'gatsby'
 import Logo from '../Logo'
 import Switch from './Switch'
 
@@ -32,42 +31,25 @@ const Header = () => {
           maxWidth: ['100%', '1400px'],
           mx: 'auto',
           gridAutoFlow: 'row',
-          gridTemplateColumns: ['repeat(2, 1fr)', 'repeat(3, 1fr)']
+          gridTemplateColumns: ['repeat(3, 1fr)', 'repeat(3, 1fr)']
         }}>
         <div
           sx={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gridColumnStart: [1, 2],
+            gridColumnStart: [2, 2],
             gridColumnEnd: [3, 3],
-            order: [0, 1]
+            order: [1, 1]
           }}>
           <Logo />
         </div>
         <div
           sx={{
-            display: 'flex',
+            display: ['flex', 'flex'],
             alignItems: 'center',
             justifyContent: 'flex-start'
-          }}>
-          <Link
-            to="/about-us"
-            sx={{
-              variant: 'styles.navlink',
-              p: 2
-            }}>
-            About Us
-          </Link>
-          <Link
-            to="/blog"
-            sx={{
-              variant: 'styles.navlink',
-              p: 2
-            }}>
-            Blog
-          </Link>
-        </div>
+          }}></div>
         <div
           sx={{
             display: 'flex',

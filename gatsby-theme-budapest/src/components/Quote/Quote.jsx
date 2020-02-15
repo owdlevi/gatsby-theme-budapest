@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { Styled, jsx } from 'theme-ui'
+import { jsx } from 'theme-ui'
 
-const Quote = () => {
+const Quote = ({ quote }) => {
   return (
     <section
       sx={{
@@ -19,8 +19,7 @@ const Quote = () => {
           fontStyle: 'italic',
           fontWeight: 500
         }}>
-        Budapest is an Alpha − global city with strengths in commerce, finance, media, art, fashion, research, technology, education, and
-        entertainment.
+        {quote}
       </div>
     </section>
   )

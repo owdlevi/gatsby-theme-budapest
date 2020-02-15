@@ -1,20 +1,18 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { Link } from 'gatsby'
 
 const Tag = ({ tag }) => {
   return (
-    <Link
+    <span
       sx={{
         p: 1,
         mx: 1,
         fontSize: '14px',
         color: 'text',
         borderRadius: '10px'
-      }}
-      to={`/tag/${tag.toLowerCase()}`}>
+      }}>
       #{tag}
-    </Link>
+    </span>
   )
 }
 

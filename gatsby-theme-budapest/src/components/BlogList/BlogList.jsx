@@ -3,7 +3,7 @@ import { Styled, jsx } from 'theme-ui'
 
 import BlogCard from '../BlogCard'
 
-const BlogList = ({ posts }) => {
+const BlogList = ({ title, description, posts }) => {
   return (
     <section
       sx={{
@@ -27,13 +27,9 @@ const BlogList = ({ posts }) => {
               variant: 'heading',
               textAlign: 'center',
               mb: [2, 3]
-            }}>
-            Latest posts
-          </Styled.h2>
-          <Styled.p>
-            Palo santo lumbersexual shaman tilde street art chia. Authentic YOLO leggings palo santo readymade adaptogen offal polaroid
-            shabby chic mixtape messenger bag XOXO four loko woke.
-          </Styled.p>
+            }}
+            dangerouslySetInnerHTML={{ __html: title }}></Styled.h2>
+          <Styled.p dangerouslySetInnerHTML={{ __html: description }}></Styled.p>
         </div>
         <div
           sx={{

@@ -12,9 +12,9 @@ const indexPage = props => {
   return (
     <Layout>
       <SEO title={siteInfo.title} description={siteInfo.description} />
-      <Hero>Hero Component?</Hero>
-      <Quote />
-      <BlogList posts={blogPosts}></BlogList>
+      <Hero title={siteInfo.homePageHeroTitle} description={siteInfo.homePageHeroText} />
+      <Quote quote={siteInfo.homePageQuote} />
+      <BlogList title={siteInfo.latestPostTitle} description={siteInfo.latestPostText} posts={blogPosts}></BlogList>
     </Layout>
   )
 }
@@ -27,6 +27,7 @@ export const blogListQuery = graphql`
           fields {
             slug
           }
+          id
           timeToRead
           frontmatter {
             title
@@ -48,6 +49,11 @@ export const blogListQuery = graphql`
     site {
       siteMetadata {
         title
+        homePageHeroText
+        homePageHeroTitle
+        homePageQuote
+        latestPostText
+        latestPostTitle
       }
     }
   }

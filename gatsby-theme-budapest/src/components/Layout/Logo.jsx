@@ -5,7 +5,7 @@ import logo from '../../images/logo.svg'
 import logo_dark from '../../images/logo_dark.svg'
 
 const Logo = () => {
-  const [colorMode, setColorMode] = useColorMode()
+  const [colorMode] = useColorMode()
   const isDark = colorMode === `dark`
 
   return (

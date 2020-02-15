@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Styled, jsx } from 'theme-ui'
 
-const Hero = () => {
+const Hero = ({ title, description }) => {
   return (
     <section
       sx={{
@@ -16,13 +16,8 @@ const Hero = () => {
           py: 2,
           textAlign: 'center'
         }}>
-        <Styled.h1>
-          This theme was built for <strong>Gatsby</strong> with <strong>Theme UI</strong>
-        </Styled.h1>
-        <Styled.p>
-          Lorem ipsum dolor amet asymmetrical master cleanse disrupt YOLO portland, schlitz photo booth enamel pin locavore vegan hoodie
-          skateboard you probably haven't heard of them.{' '}
-        </Styled.p>
+        <Styled.h1 dangerouslySetInnerHTML={{ __html: title }}></Styled.h1>
+        <Styled.p dangerouslySetInnerHTML={{ __html: description }}></Styled.p>
       </div>
     </section>
   )

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { Link } from 'gatsby'
 import Logo from '../Logo'
+import SocialButtons from './SocialButtons'
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
       <div
         sx={{
           color: 'background',
-          bg: '#E9E9E9'
+          bg: 'footerBackground'
         }}>
         <div
           sx={{
@@ -21,15 +21,7 @@ const Footer = () => {
           }}>
           <Logo />
           <div>
-            <Link to="/" sx={{ variant: 'styles.navlink', p: 2 }}>
-              Home
-            </Link>
-            <Link to="/" sx={{ variant: 'styles.navlink', p: 2 }}>
-              Blog
-            </Link>
-            <Link to="/" sx={{ variant: 'styles.navlink', p: 2 }}>
-              About
-            </Link>
+            <SocialButtons />
           </div>
         </div>
       </div>
@@ -46,7 +38,15 @@ const Footer = () => {
           }}>
           <div>&copy; {new Date().getFullYear()} Gatsby Theme Budapest.</div>
           <div>
-            Made with ❤️ + ☕ by{' '}
+            Made with{' '}
+            <span role="img" aria-label="love">
+              ❤️
+            </span>{' '}
+            +{' '}
+            <span role="img" aria-label="coffe">
+              ☕
+            </span>{' '}
+            by{' '}
             <a href="https://www.crazycode.com" sx={{ color: 'text' }}>
               CrazyCode
             </a>

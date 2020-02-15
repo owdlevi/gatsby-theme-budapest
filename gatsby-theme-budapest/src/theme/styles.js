@@ -18,6 +18,13 @@ export default {
     height: 80,
     py: 2
   },
+  hidden: {
+    height: '1px',
+    width: '1px',
+    clip: 'rect(0 0 0 0)',
+    overflow: 'hidden',
+    position: 'absolute'
+  },
   container: {
     fontSize: 1,
     width: '100%',

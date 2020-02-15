@@ -16,7 +16,7 @@ const blogPost = ({ data: { mdx } }) => {
         <div>
           <Img
             sx={{
-              height: '100%'
+              height: ['400px', '400px', '100%']
             }}
             fluid={mdx.frontmatter.featuredImage.childImageSharp.fluid}
             alt={mdx.frontmatter.title}
@@ -26,7 +26,7 @@ const blogPost = ({ data: { mdx } }) => {
           sx={{
             width: ['90%', '80%'],
             mx: 'auto',
-            mt: '-200px',
+            mt: ['40px', '-100px', '-200px'],
             mb: [3, 4],
             zIndex: 20,
             position: 'relative',

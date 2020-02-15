@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Styled, jsx } from 'theme-ui'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-import { useSpring, animated, config } from 'react-spring'
+import { useSpring, animated } from 'react-spring'
 import { Waypoint } from 'react-waypoint'
 
 import Tag from '../Tag/Tag'
@@ -51,21 +51,21 @@ const BlogCard = ({ post }) => {
               zIndex: 20,
               left: 0,
               bottom: 0,
-              backgroundColor: 'primary'
+              backgroundColor: 'darkPrimary'
             }}>
-            <Link
+            <span
               to="/"
               sx={{
                 display: 'inline-block',
                 p: [2],
-                color: 'white',
-                fontWeight: '500',
+                color: 'background',
+                fontWeight: '600',
                 textTransform: 'uppercase',
                 fontSize: '12px',
                 letterSpacing: '1px'
               }}>
               {post.node.frontmatter.category}
-            </Link>
+            </span>
           </div>
           <div
             sx={{
@@ -73,13 +73,13 @@ const BlogCard = ({ post }) => {
               zIndex: 20,
               right: 0,
               bottom: 0,
-              backgroundColor: 'primary'
+              backgroundColor: 'darkPrimary'
             }}>
             <span
               sx={{
                 display: 'inline-block',
                 p: [2],
-                color: 'white',
+                color: 'background',
                 fontWeight: '500',
                 textTransform: 'uppercase',
                 fontSize: '12px',
@@ -123,7 +123,7 @@ const BlogCard = ({ post }) => {
               color: 'text'
             }}>
             {post.node.frontmatter.tags.map(tag => {
-              return <Tag tag={tag} />
+              return <Tag key={`${post.node.id}_${tag}`} tag={tag} />
             })}
           </div>
         </div>
