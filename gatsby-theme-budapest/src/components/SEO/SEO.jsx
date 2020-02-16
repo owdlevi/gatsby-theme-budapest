@@ -1,5 +1,5 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 const Head = props => {
@@ -17,18 +17,20 @@ const Head = props => {
   ]
 
   return (
-    <Helmet>
-      <html lang={config.lang} />
-      {/* General tags */}
-      <title>
-        {title} {config.siteBrandName ? ` | ${config.siteBrandName}` : ``}
-      </title>
-      <meta name="description" content={description} />
-      {/* <meta name="image" content={image} /> */}
+    <>
+      <Helmet defer={false}>
+        <html lang={config.lang} />
+        {/* General tags */}
+        <title>
+          {title} {config.siteBrandName ? ` | ${config.siteBrandName}` : ``}
+        </title>
+        <meta name="description" content={description} />
+        {/* <meta name="image" content={image} /> */}
 
-      {/* Schema.org tags */}
-      <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
-    </Helmet>
+        {/* Schema.org tags */}
+        <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
+      </Helmet>
+    </>
   )
 }
 
@@ -37,7 +39,7 @@ const SEO = props => <StaticQuery query={querySEO} render={data => <Head {...pro
 export default SEO
 
 const querySEO = graphql`
-  query SEO {
+  query seoAndSeo {
     site {
       buildTime(formatString: "YYYY-MM-DD")
       config: siteMetadata {

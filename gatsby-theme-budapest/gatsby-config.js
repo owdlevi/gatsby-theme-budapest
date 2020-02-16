@@ -38,13 +38,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: siteConfig.googleAnalyticsID,
-        head: true
-      }
-    },
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         gatsbyRemarkPlugins: [
@@ -74,6 +67,7 @@ module.exports = {
         icon: `./src/images/favicon.png`
       }
     },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-remark-prismjs`,
     `gatsby-plugin-sharp`,

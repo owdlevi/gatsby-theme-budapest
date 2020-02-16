@@ -14,7 +14,6 @@ const siteConfig = {
   latestPostTitle: `Latest posts`,
   latestPostText: `Palo santo lumbersexual shaman tilde street art chia. Authentic YOLO leggings palo santo readymade adaptogen offal polaroid shabby chic mixtape messenger bag XOXO four loko woke.`,
   copyrightText: `Gatsby Theme Budapest.`,
-  googleAnalyticsID: `UA-XXXX`,
   facebookURL: ``,
   linkedinURL: ``,
   twitterURL: ``,
