@@ -4,10 +4,15 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/Layout'
+import SEO from '../components/SEO'
 
 const blogPost = ({ data: { mdx } }) => {
   return (
     <Layout>
+      <SEO
+        title={mdx.frontmatter.seo.title ? mdx.frontmatter.seo.title : mdx.frontmatter.title}
+        description={mdx.frontmatter.seo.description ? mdx.frontmatter.seo.description : mdx.frontmatter.excerpt}
+      />
       <article
         sx={{
           width: ['100%'],
@@ -59,9 +64,13 @@ export const pageQuery = graphql`
         post_date
         excerpt
         category
+        seo {
+          title
+          description
+        }
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 1400, maxHeight: 500, quality: 80) {
+            fluid(maxWidth: 1900, maxHeight: 600, quality: 80) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

@@ -9,6 +9,7 @@ import SEO from '../components/SEO'
 const indexPage = props => {
   const blogPosts = props.data.allMdx.edges
   const siteInfo = props.data.site.siteMetadata
+
   return (
     <Layout>
       <SEO title={siteInfo.title} description={siteInfo.description} />
@@ -49,6 +50,7 @@ export const blogListQuery = graphql`
     site {
       siteMetadata {
         title
+        description
         homePageHeroText
         homePageHeroTitle
         homePageQuote
