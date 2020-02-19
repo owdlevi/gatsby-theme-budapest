@@ -1,12 +1,21 @@
 /** @jsx jsx */
+import React, { useState } from 'react'
 import { Styled, jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { useSpring, animated } from 'react-spring'
+import { Waypoint } from 'react-waypoint'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 
-const blogPost = ({ data: { mdx } }) => {
+const BlogPost = ({ data: { mdx } }) => {
+
+
+  const [isActive, setIsActive] = useState(false)
+  const slideIn = useSpring({
+    transform: isActive ? `translateY(0)` : `translateY(200px)`
+  })
   return (
     <Layout>
       <SEO
@@ -18,6 +27,7 @@ const blogPost = ({ data: { mdx } }) => {
           width: ['100%'],
           mx: 'auto'
         }}>
+
         <div>
           <Img
             sx={{
@@ -27,7 +37,8 @@ const blogPost = ({ data: { mdx } }) => {
             alt={mdx.frontmatter.title}
           />
         </div>
-        <div
+        <animated.div style={slideIn}
+
           sx={{
             width: ['90%', '80%'],
             mx: 'auto',
@@ -39,14 +50,20 @@ const blogPost = ({ data: { mdx } }) => {
             p: [3, 4],
             boxShadow: '3px 3px 20px rgba(0, 0, 0, .5)'
           }}>
-          <Styled.h1
-            sx={{
-              textAlign: 'center'
-            }}>
-            {mdx.frontmatter.title}
-          </Styled.h1>
+          <Waypoint key={mdx.id} bottomOffset="50px" onEnter={() => setIsActive(true)} />
+          <div>
+            <Styled.h1
+              sx={{
+                textAlign: 'center'
+              }}>
+              {mdx.frontmatter.title}
+            </Styled.h1>
+            <Styled.p>{mdx.frontmatter.post_date}</Styled.p>
+          </div>
+
           <MDXRenderer>{mdx.body}</MDXRenderer>
-        </div>
+
+        </animated.div>
       </article>
     </Layout>
   )
@@ -80,4 +97,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default blogPost
+export default BlogPost
