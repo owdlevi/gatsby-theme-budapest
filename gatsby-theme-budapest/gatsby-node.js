@@ -12,9 +12,14 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               slug
             }
+            id
+            timeToRead
             frontmatter {
               title
               tags
+              post_date
+              excerpt
+              category
             }
           }
         }

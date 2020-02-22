@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import React, { useState } from 'react'
+import { useState } from "react"
 import { Styled, jsx } from 'theme-ui'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { useSpring, animated } from 'react-spring'
@@ -9,9 +9,12 @@ import { Waypoint } from 'react-waypoint'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 
-const BlogPost = ({ data: { mdx } }) => {
+const BlogPost = ({ data: { mdx }, ...props }) => {
 
+  const next = props.pageContext.next
+  const prev = props.pageContext.prev
 
+  console.log(props)
   const [isActive, setIsActive] = useState(false)
   const slideIn = useSpring({
     transform: isActive ? `translateY(0)` : `translateY(200px)`
@@ -48,7 +51,7 @@ const BlogPost = ({ data: { mdx } }) => {
             position: 'relative',
             backgroundColor: 'background',
             p: [3, 4],
-            boxShadow: '3px 3px 20px rgba(0, 0, 0, .5)'
+            variant: 'styles.shadow',
           }}>
           <Waypoint key={mdx.id} bottomOffset="50px" onEnter={() => setIsActive(true)} />
           <div>
@@ -62,7 +65,25 @@ const BlogPost = ({ data: { mdx } }) => {
           </div>
 
           <MDXRenderer>{mdx.body}</MDXRenderer>
-
+          <div sx={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'space-around',
+            mx: 'auto',
+            my: [2, 3, 4],
+            backgroundColor: 'background',
+            py: [3, 4],
+            variant: 'styles.shadow',
+          }}>
+            {
+              prev ? <div>
+                <Link to={prev.fields.slug}>{
+                  prev.frontmatter.title}</Link></div> : <div></div>
+            }
+            {
+              next ? <div><Link to={next.fields.slug}>{next.frontmatter.title}</Link></div> : <div></div>
+            }
+          </div>
         </animated.div>
       </article>
     </Layout>
