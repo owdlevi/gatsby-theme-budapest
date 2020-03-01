@@ -35,27 +35,35 @@ const BlogCard = ({ post }) => {
         backgroundColor: 'background'
       }}>
       <Waypoint key={post.node.fields.slug} bottomOffset="50px" onEnter={() => setCardVisible(true)} />
-      <animated.div style={cardActive}
+      <div
         onMouseEnter={() => setCardActive(true)}
         onMouseLeave={() => setCardActive(false)}
         sx={{
-          position: 'relative', textAlign: 'center',
-          height: ['auto', '600px'],
-        }}
-      >
+          position: 'relative',
+          textAlign: 'center',
+          height: ['auto', '600px']
+        }}>
         <Link to={post.node.fields.slug}>
           <div
             sx={{
               height: '60%',
-              position: 'relative'
+              position: 'relative',
+              overflow: 'hidden'
             }}>
-            <Img
+            <animated.div
+              style={cardActive}
               sx={{
-                height: '100%'
-              }}
-              fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid}
-              alt={post.node.frontmatter.title}
-            />
+                height: '100%',
+                overflow: 'hidden'
+              }}>
+              <Img
+                sx={{
+                  height: '100%'
+                }}
+                fluid={post.node.frontmatter.featuredImage.childImageSharp.fluid}
+                alt={post.node.frontmatter.title}
+              />
+            </animated.div>
             <div
               sx={{
                 position: 'absolute',
@@ -97,7 +105,7 @@ const BlogCard = ({ post }) => {
                   letterSpacing: '1px'
                 }}>
                 {post.node.timeToRead} min
-            </span>
+              </span>
             </div>
           </div>
           <div
@@ -139,7 +147,7 @@ const BlogCard = ({ post }) => {
             </div>
           </div>
         </Link>
-      </animated.div>
+      </div>
     </animated.div>
   )
 }
